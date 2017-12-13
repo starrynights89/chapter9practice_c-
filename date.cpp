@@ -29,5 +29,9 @@ void f()
     cout << today << '\n'; //use today
     int_day(today, 2008, 3, 30);
     Date tomorrow;
+    tomorrow.y = today.y;
+    tomorrow.m = today.m;
+    tomorrow.d = today.d+1; //add 1 to today
+    cout << tomorrow << '\n';
     add_day(today, 1);
 }
