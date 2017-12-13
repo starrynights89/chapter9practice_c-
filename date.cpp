@@ -26,6 +26,8 @@ void add_day(Date& dd, int n)
 void f()
 {
     Date today;
-    int_day(today, 12, 24, 2005); 
+    cout << today << '\n'; //use today
+    int_day(today, 2008, 3, 30);
+    Date tomorrow;
     add_day(today, 1);
 }
