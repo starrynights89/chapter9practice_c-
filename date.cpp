@@ -10,7 +10,22 @@ struct Date
 
 Date today; //a Date variable (a named object)
 
-//set today to December 24, 2005
-today.y = 2005;
-today.m = 24; 
-today.d = 12; 
+//helper functions:
+
+void int_day(Date& dd, int y, int m, int d)
+{
+    //check that (y,m,d) is a valid date
+    //if it is, use it to initialize dd
+}
+
+void add_day(Date& dd, int n)
+{
+    //increse dd by n days
+}
+
+void f()
+{
+    Date today;
+    int_day(today, 12, 24, 2005); 
+    add_day(today, 1);
+}
