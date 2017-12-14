@@ -20,6 +20,12 @@ private:
 Date::Date(int yy, int mm, int dd) //constructor
 :y{yy}, m{mm}, d{dd} //note: member initializers
 {
+    if(!is_valid()) throw Invalid{}; //check for validity
+}
+
+bool Date::is_valid() //return true if date is valid
+{
+    if(m<1 || 12<m) return false;
 }
 
 void Date::add_day(int n)
