@@ -17,6 +17,22 @@ private:
     bool is_valid(); //return true if date is valid
 };
 
+enum class Month
+{
+    Jan=1, Feb, Mar, Apr, May, Jun, Aug, Sep, Oct, Nov, Dec
+};
+
+Month operator++(Month& m) //prefix increment operator
+{
+    m = (m==Dec) ? Jan : Month(int(m)+1); //"wrap around"
+    return m;
+}
+
+enum class day
+{
+    monday, tuesday, wednesday, thursday, friday, saturday, sunday
+};
+
 Date::Date(int yy, int mm, int dd) //constructor
 :y{yy}, m{mm}, d{dd} //note: member initializers
 {
@@ -27,6 +43,8 @@ bool Date::is_valid() //return true if date is valid
 {
     if(m<1 || 12<m) return false;
 }
+
+Month m = Month::feb;
 
 void a(Date d1, Date d2)
 {
