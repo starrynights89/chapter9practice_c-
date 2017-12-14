@@ -6,6 +6,7 @@
 class Date
 {
 public:
+    class Invalid { }; //to be used as exception
     Date(int y, int m, int d); //check the valid date and initialize
     void add_day(int n); //increase the Date by n days
     int month() { return m; } 
@@ -13,6 +14,7 @@ public:
     int year() { return y; }
 private:
     int y, m, d; //year, month, day
+    bool is_valid(); //return true if date is valid
 };
 
 Date::Date(int yy, int mm, int dd) //constructor
