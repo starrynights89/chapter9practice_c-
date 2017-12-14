@@ -5,6 +5,7 @@
 //provide some notational convenience 
 class Date
 {
+private:
     int y, m, d; //year, month, day
 public:
     Date(int y, int m, int d); //check the valid date and initialize
@@ -14,9 +15,3 @@ public:
     int year() { return y; }
 };
 
-void f()
-{
-    Date last(2000, 12, 31);
-    last.add_day(1);
-    add_day(2);
-}
