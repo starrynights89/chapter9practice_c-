@@ -24,7 +24,7 @@ void Date::add_day(int n)
 {
 }
 
-int month() //oops: we forgot Date::
+int Date::month() 
 {
     return m; //not the member function, can't access m 
 }
