@@ -28,11 +28,19 @@ bool Date::is_valid() //return true if date is valid
     if(m<1 || 12<m) return false;
 }
 
-void Date::add_day(int n)
-{
-}
-
-void f(Date d1, Date d2)
+void a(Date d1, Date d2)
 {
     cout << d1.month() << ' ' << d2.month() << '\n';
+}
+
+void f(int x, int y)
+try
+{
+    Date dxy {2004,x,y};
+    cout << dxy << '\n'; 
+    dxy.add_day(2);
+}
+catch(Date::Invalid)
+{
+    error("invalid date"); 
 }
