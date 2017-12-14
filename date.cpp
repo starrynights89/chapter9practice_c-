@@ -24,7 +24,7 @@ void Date::add_day(int n)
 {
 }
 
-int Date::month() 
+void f(Date d1, Date d2)
 {
-    return m; //not the member function, can't access m 
+    cout << d1.month() << ' ' << d2.month() << '\n';
 }
