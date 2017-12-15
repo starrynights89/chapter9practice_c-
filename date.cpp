@@ -1,5 +1,10 @@
 #include "std_lib_facilities.h"
 
+enum class Month
+{
+    Jan=1, Feb, Mar, Apr, May, Jun, Aug, Sep, Oct, Nov, Dec
+};
+
 //simple Date
 //guarantee initialization with constuctor
 //provide some notational convenience 
@@ -7,19 +12,14 @@ class Date
 {
 public:
     class Invalid { }; //to be used as exception
-    Date(int y, int m, int d); //check the valid date and initialize
+    Date(int y, Month m, int d); //check the valid date and initialize
     void add_day(int n); //increase the Date by n days
     int month() { return m; } 
     int day() { return d; }
     int year() { return y; }
 private:
-    int y, m, d; //year, month, day
+    int y, Month m, d; //year, month, day
     bool is_valid(); //return true if date is valid
-};
-
-enum class Month
-{
-    Jan=1, Feb, Mar, Apr, May, Jun, Aug, Sep, Oct, Nov, Dec
 };
 
 Month operator++(Month& m) //prefix increment operator
