@@ -28,11 +28,6 @@ Month operator++(Month& m) //prefix increment operator
     return m;
 }
 
-enum class day
-{
-    monday, tuesday, wednesday, thursday, friday, saturday, sunday
-};
-
 Date::Date(int yy, int mm, int dd) //constructor
 :y{yy}, m{mm}, d{dd} //note: member initializers
 {
