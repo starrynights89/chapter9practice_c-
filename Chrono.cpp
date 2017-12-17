@@ -89,4 +89,40 @@ ostream& operator<<(ostream& os, const Date& d)
     return os << '(' << d.year() << ',' << d.month() << ',' << d.day() << ')';
 }
 
-istream
+istream& operator>>(istream& is, Date& dd)
+{
+    int y, m, d;
+    char ch1, ch2, ch3, ch4;
+    is >> ch1 >> y >> ch2 >> m >> ch3 >> d >> ch4;
+    if(!is) return is;
+    if (ch1!='(' || ch2!=',' || ch3!=',' || ch4!=')') //oops: format error
+    {
+        is.clear(ios_base::failbit); //set the fail bit
+        return is;
+    }
+    
+    dd = Date(y, Month(m), d); //update dd
+    return is;
+}
+
+enum class Day
+{
+    sunday, monday, tuesday, wednesday, thursday, friday, saturday
+};
+
+Day day_of_week(const Date& d)
+{
+    //...
+}
+
+Date next_Sunday(const Date& d)
+{
+    //...
+}
+
+Date next_weekday(const Date& d)
+{
+    //...
+}
+
+} //Chrono
