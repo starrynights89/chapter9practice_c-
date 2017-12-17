@@ -79,3 +79,14 @@ bool operator==(const Date& a, const Date& b)
         && a.month()==b.month()
         && a.day()==b.day();
 }
+
+bool operator!=(const Date& a, const Date& b)
+{
+    return !(a==b);
+}
+ostream& operator<<(ostream& os, const Date& d)
+{
+    return os << '(' << d.year() << ',' << d.month() << ',' << d.day() << ')';
+}
+
+istream
