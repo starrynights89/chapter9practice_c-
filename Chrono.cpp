@@ -2,8 +2,7 @@
 #include "Chrono.h"
 
 //member function definitions
-namespace Chrono
-{
+namespace Chrono {
 
 Date::Date(int yy, Month mm, int dd)
 :y{yy}, m{mm}, d{dd}
@@ -13,7 +12,7 @@ Date::Date(int yy, Month mm, int dd)
 
 const Date& default_date()
 {
-    static Date dd {2001, Month::jan,1}; //start of 21st century
+    static const Date dd {2001, Date::jan,1}; //start of 21st century
     return dd;
 }
 
