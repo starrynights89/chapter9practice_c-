@@ -20,7 +20,6 @@ Date::Date()
 :y{default_date().year()},
 m{default_date().month()},
 d{default_date().day()},
-{
 }
 
 void Date::add_day(int n)
