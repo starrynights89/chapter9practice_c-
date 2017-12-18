@@ -52,3 +52,21 @@ ostream& operator<<(ostream& os, const Date& d);
 istream& operator>>(istream& is, Date& dd);
 
 } //Chrono
+
+namespace Chrono941
+{
+    //simple Date
+    struct Date
+    {
+        int y; //year
+        int m; //month in year
+        int d; //day of month
+    };
+
+    //helper functions
+    void init_day(Date& dd, int y, int m, int d);
+    void add_day(Date& dd, int n);
+
+    //operators
+    ostream& operator<<(ostream os, const Date& d);
+} //Chrono941
