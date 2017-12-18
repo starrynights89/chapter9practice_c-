@@ -1,4 +1,4 @@
-#include "std_lib_facilities.h"
+#include <iostream>
 
 namespace Chrono
 {
@@ -43,13 +43,13 @@ enum Day
     sunday, monday, tuesday, wednesday, thursday, friday, saturday
 };
 Day day_of_week(const Date& d); //weekday of d
-ostream& operator<<(ostream& os, Day d);
+std::ostream& operator<<(std::ostream& os, Day d);
 
 bool operator==(const Date& a, const Date& b); 
 bool operator!=(const Date& a, const Date& b);
 
-ostream& operator<<(ostream& os, const Date& d);
-istream& operator>>(istream& is, Date& dd);
+std::ostream& operator<<(std::ostream& os, const Date& d);
+std::istream& operator>>(std::istream& is, Date& dd);
 
 } //Chrono
 
@@ -68,5 +68,5 @@ namespace Chrono941
     void add_day(Date& dd, int n);
 
     //operators
-    ostream& operator<<(ostream os, const Date& d);
+    std::ostream& operator<<(std::ostream os, const Date& d);
 } //Chrono941
