@@ -2,14 +2,14 @@
 
 namespace Chrono
 {
+class Date 
+{
+public:
     enum class Month
     {
         jan=1, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec
     };
 
-class Date 
-{
-public:
     class Invalid { }; //to throw as exception
 
     Date(int y, Month m, int d); //check for valid date and initialize
@@ -31,7 +31,7 @@ private:
     int d;
 };
 
-bool is_date(int y, Month m, int d); //true for valid date
+bool is_date(int y, Date::Month m, int d); //true for valid date
 bool leapyear(int y); //true if y is a leap year
 
 bool operator==(const Date& a, const Date& b); 
