@@ -32,13 +32,23 @@ private:
 };
 
 bool is_date(int y, Date::Month m, int d); //true for valid date
+
 bool leapyear(int y); //true if y is a leap year
+int day_in_year(const Date& d); //number of day in year
+int n_leapyears(int y); //number of leap years between Jan 1 of year y and first_date
+long int days_linear(const Date& d);
+
+enum Day
+{
+    sunday, monday, tuesday, wednesday, thursday, friday, saturday
+};
+Day day_of_week(const Date& d); //weekday of d
+ostream& operator<<(ostream& os, Day d);
 
 bool operator==(const Date& a, const Date& b); 
 bool operator!=(const Date& a, const Date& b);
 
 ostream& operator<<(ostream& os, const Date& d);
-
 istream& operator>>(istream& is, Date& dd);
 
 } //Chrono
