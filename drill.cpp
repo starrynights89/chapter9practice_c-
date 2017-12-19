@@ -1,7 +1,6 @@
 //Chapter 09 drill
-
+#include "std_lib_facilities.h"
 #include "Chrono.h"
-#include <iostream>
 
 void chapter941()
 {
@@ -9,7 +8,7 @@ void chapter941()
     std::cout << "Chapter 9.4.1:\n";
     Date today;
     init_day(today,1978,6,25);
-    Date tomorrow = today;
+    Date tomorrow;
     add_day(tomorrow,1);
     cout << "Today: " << today << std::endl;
     cout << "Tomorrow: " << tomorrow << std::endl;

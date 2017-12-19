@@ -47,5 +47,42 @@ bool is_date(int y, Month m, int d)
 
     if(d<=0) return false; //d must be positive
     if(m<Month::jan || Month::dec<m) return false;
+
+    int days_in_month = 31; //most months have 31 days
+
+    switch(m) {
+    case Month::feb: //the length of February varies
+        days_in_month = (leapyear(y))?29:28;
+        break;
+    case Month::apr: case Month::jun: case Month::sep: case Month::nov:
+        days_in_month = 30; //the rest have 30 days
+        break;
+    }
+
+    if (days_in_month<d) return false;
+    return true;
+}
+
+bool leapyear(int y)
+{
+    //see exercise 10
+}
+
+bool operator==(const Date& a, const Date& b)
+{
+    return a.year()==b.year()
+    && a.month()==b.month()
+    && a.day()==b.day();
+}
+
+bool operator!=(const Date& a, const Date& b)
+{
+    return !(a==b);
+}
+ostream& operator<<(ostream& os, const Date& d)
+{
+    return os << '(' << d.year()
+    << ',' << d.month()
+    << ',' << d.day() << ')';
 }
 }
