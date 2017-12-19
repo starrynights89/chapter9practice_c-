@@ -11,8 +11,8 @@ void chapter941()
     init_day(today,1978,6,25);
     Date tomorrow = today;
     add_day(tomorrow,1);
-    std::cout << "Today: " << today << std::endl;
-    std::cout << "Tomorrow: " << tomorrow << std::endl;
+    cout << "Today: " << today << std::endl;
+    cout << "Tomorrow: " << tomorrow << std::endl;
     Date invalid_date;
     init_day(invalid_date,2004,13,-5);
 }
