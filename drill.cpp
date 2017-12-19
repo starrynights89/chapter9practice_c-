@@ -73,7 +73,9 @@ void chapter974()
 int main()
 try
 {
+	chapter942();
     chapter974();
+	return 0;
 }
 catch (exception& e) {
     cerr << "exception: " << e.what() << endl;
